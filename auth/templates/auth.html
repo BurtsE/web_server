@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask</title>
+    <link href="{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Авторизация</h1>
+    <a href="/">Вернуться в главное меню</a>
+</header>
+<main>
+    <form action="" method="post">
+        <input type="text" placeholder="Логин" name="login">
+        <input type="password" placeholder="Пароль" name="password">
+        <input type="submit" value="Авторизоваться">
+    </form>
+</main>
+</body>
+</html>

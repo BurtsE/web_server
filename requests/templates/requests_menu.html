@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask course</title>
+    <link href="{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Работа с запросами</h1>
+    <a href="/">Вернуться в главное меню</a>
+</header>
+<ol>
+   <li><a href="{{ url_for('requests.book_list') }}">Список всех билетов</a></li>
+   <li><a href="{{ url_for('requests.order_list') }}">Информация о покупателе</a></li>
+</ol>
+</body>
+</html>

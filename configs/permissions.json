@@ -1,0 +1,18 @@
+{
+  "admin": [
+    "requests",
+    "auth",
+    "basket",
+    ""
+  ],
+  "cashier": [
+    "",
+    "auth",
+    "requests",
+    "basket"
+  ],
+  "unauthorised": [
+    "",
+    "auth"
+  ]
+}

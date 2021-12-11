@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask course</title>
+    <link href="{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+{% import 'basket_utils.html' as utils %}
+    <header>
+        <h1>Корзина</h1>
+        <a href="/basket">Вернуться к выбору рейса</a>
+    </header>
+    <main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Товары</p>
+                {% if items %}
+                {% for item in items %}
+                    {{ utils.render_item(item, show_form=true) }}
+                {% endfor %}
+                {% else %}
+                    <p>Нет товаров</p>
+                {% endif %}
+            </div>
+            <div class="col">
+                <p>Корзина</p>
+                {% if basket %}
+                    {% for item in basket %}
+                        {{ utils.render_item(item, show_form=false) }}
+                    {% endfor %}
+                {% else %}
+                    <p>Корзина пуста</p>
+                {% endif %}
+            </div>
+            <div class="col">
+                <form action="/basket/buy" method="post">
+                    <input type="text" placeholder="Имя пассажира" name="name">
+                    <input type="submit" value="Купить">
+                </form>
+                <br>
+                <a href="/basket/clear">Очистить корзину</a>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

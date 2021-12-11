@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+    <title>Flask course</title>
+</head>
+<header>
+    <h1>Введите данные об интересующем рейсе</h1>
+    <a href="{{ url_for('requests.menu') }}">Вернуться в меню запросов</a>
+</header>
+<body>
+    <form action="/basket/main" method="GET">
+        <input type="text" placeholder="Вылет" name="departure">
+        <input type="text" placeholder="Прибытие" name="destiny">
+        <input type="date" placeholder="Дата рейса" name="date">
+        <input type="submit" placeholder="Показать билеты">
+    </form>
+</body>
+</html>

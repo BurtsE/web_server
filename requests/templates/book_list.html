@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask course</title>
+    <link href="{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Проданных билетов</h1>
+    <a href="{{ url_for('requests.menu') }}">Вернуться в меню запросов</a>
+</header>
+<main>
+    <form action="" method="post">
+    <input type="date" placeholder="Дата" name="date" required>
+    <input type="submit" value="Отобразить билеты">
+</form>
+    <table frame="border" rules="all" bordercolor="black">
+        <tr>
+            <th>Имя пассажира</th>
+            <th>Дата покупки билета</th>
+            <th>Место вылета</th>
+            <th>Место прибытия</th>
+            <th>Дата рейса</th>
+            <th>Стоимость билета</th>
+        </tr>
+        {% for item in tickets %}
+        <tr>
+            <td>{{ item['Passenger_Name'] }}</td>
+            <td>{{ item['Date_of_sale'] }}</td>
+            <td>{{ item['Departure_airport'] }}</td>
+            <td>{{ item['Arrival_airport'] }}</td>
+            <td>{{ item['Departure_Time_And_Date'] }}</td>
+            <td>{{ item['Cost'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</main>
+</body>
+</html>

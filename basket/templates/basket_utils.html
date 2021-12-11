@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask course</title>
+</head>
+<body>
+{% macro render_item(item, show_form=False) %}
+<div class="container" id="box">
+
+        <span>Место отправки: {{ item['dep'] }}</span>
+        <span>Место прибытия: {{ item['arr'] }}</span>
+        <span>Дата рейса: {{ item['date'][4:16] }}</span>
+        <span>Цена: {{ item['price'] }}</span>
+
+    {% if show_form %}
+    <div>
+        <form action="" method="post">
+            <input type="submit" value="Добавить">
+            <input type="hidden" name="item_id" value="{{ item['id'] }}">
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}
+</body>
+</html>

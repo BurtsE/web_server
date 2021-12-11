@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask course</title>
+    <link href="{{ url_for('static',filename='style.css') }}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Начало работы</h1>
+</header>
+<main>
+    <ul>
+        <li><a href="{{ url_for('requests.menu') }}">Работа с запросами</a></li>
+        <li><a href="{{ url_for('auth.index') }}">Авторизация</a></li>
+    <!--    <li><a href="/session-clear">Выйти</a></li>-->
+        <li><a href="{{ url_for('basket.index') }}">Корзина</a></li>
+        <li><a href="/exit">Завершить работу</a></li>
+        {% if session['group_name'] %}
+        <p style="text-align: center">(Текущий пользователь: {{(session['group_name'])}})</p>
+        {% endif %}
+    </ul>
+</main>
+</body>
+</html>
